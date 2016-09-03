@@ -1,7 +1,11 @@
-function reduce(arr, callback) {
-       var total = arr[0];
-    for(var i = 1; i < arr.length; i++) {
-      total = callback(total, arr[i]);
-  }
-  return total;
+function reduce(collection, callback, initial) {
+  var accumulator = initial;
+  each(collection, function(element) {
+    if (accumulator == undefined) {
+      accumulator = element;
+    } else {
+      accumulator = callback(accumulator, element);
+    }
+  });
+  return accumulator;
 }
