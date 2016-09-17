@@ -1,9 +1,9 @@
 function filter(arr, callback) {
-  var newArray = [];
+  var result = [];
   for(var i = 0; i < arr.length; i++) {
-      if (callback(arr[i]) == true) {
-        newArray.push(arr[i])
+      if (callback(arr[i]) === true) {
+        result.push(arr[i])
       }
   }  
-  return newArray;
+  return result;
 }
